@@ -13,8 +13,9 @@ const App = () => {
             <BrowserRouter>
                 <div>
                     <Header />
+                    {/* Place react components that are inside a HOC inside an anon function to bypass react-router prop checking */}
                     <Route path="/" exact component={StreamList} />
-                    <Route path="/streams/new" component={StreamCreate} />
+                    <Route path="/streams/new" component={() => StreamCreate} />
                     <Route path="/streams/edit" component={StreamEdit} />
                     <Route path="/streams/delete" component={StreamDelete} />
                     <Route path="/streams/show" component={StreamShow} />
